@@ -1,5 +1,6 @@
 const path = require('path')
 
+"file-loader", "image-webpack-loader"
 module.exports = {
   mode: 'production',
   entry: path.resolve(__dirname, 'js/dashboard_main.js'),

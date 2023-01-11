@@ -10,3 +10,6 @@
 0x00-Webpack/task_2/public/bundle.js.LICENSE.txt
 0x00-Webpack/task_2/package-lock.json
 0x00-Webpack/task_1/public/bundle.js
+0x00-Webpack/task_3/node_modules/*
+0x00-Webpack/task_3/assets/holberton-logo.jpg
+0x00-Webpack/task_3/package-lock.json

@@ -12,6 +12,7 @@ root.render(
       <NotificationList />
     </div>
     <App />
+    
   </React.StrictMode>
 );
 

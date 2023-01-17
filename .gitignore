@@ -11,5 +11,11 @@
 0x00-Webpack/task_2/package-lock.json
 0x00-Webpack/task_1/public/bundle.js
 0x00-Webpack/task_3/node_modules/*
+0x00-Webpack/task_4/node_modules/*
+0x00-Webpack/task_5/node_modules/*
 0x00-Webpack/task_3/assets/holberton-logo.jpg
 0x00-Webpack/task_3/package-lock.json
+0x01-react_intro/task_5/dashboard/node_modules/.bin/acorn
+*.ts
+0x01-react_intro/task_1/dashboard/src/App.js
+0x01-react_intro/task_5/dashboard/node_modules/*

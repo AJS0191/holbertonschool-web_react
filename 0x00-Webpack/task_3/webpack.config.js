@@ -14,7 +14,7 @@ module.exports = {
     body: path.resolve(__dirname, './modules/body/body.js'),
     footer: path.resolve(__dirname, './modules/footer/footer.js'),
 },
-  devtool: 'inline-source-map',
+  devtool: 'inline-source-m ap',
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].bundle.js'

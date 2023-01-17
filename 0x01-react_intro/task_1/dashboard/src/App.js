@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './holberton_logo.jpg';
 import './App.css';
 import year from './utils'
 

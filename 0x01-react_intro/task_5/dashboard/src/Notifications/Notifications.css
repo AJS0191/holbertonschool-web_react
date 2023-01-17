@@ -1,0 +1,12 @@
+.Notifications {
+    border:  solid 2px red;
+    padding: 4px;
+}
+
+li.urgent {
+    color:red
+}
+
+li.normal {
+    color:blue
+}

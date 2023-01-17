@@ -23,7 +23,27 @@ module.exports = {
         {
           test:/\.(?:ico|gif|png|jpg|jpeg)$/i,
           type: 'asset/resource'
-        }
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', "@babel/preset-react"],
+            }
+          }
+        },
+        {
+          test: /\.svg/,
+          use: {
+            loader: "svg-url-loader",
+            options: {
+              // make all svg images to work in IE
+              iesafe: true,
+            },
+          },
+        },
       ]
     }
   }

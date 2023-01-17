@@ -19,3 +19,5 @@
 *.ts
 0x01-react_intro/task_1/dashboard/src/App.js
 0x01-react_intro/task_5/dashboard/node_modules/*
+0x02-react_props/task_0/dashboard/node_modules/*
+0x02-react_props/task_0/dashboard/node_modules/*

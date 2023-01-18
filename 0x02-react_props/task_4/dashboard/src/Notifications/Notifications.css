@@ -7,6 +7,6 @@
     color:red
 }
 
-[data-notification-type='normal'] {
+[data-notification-type='default'] {
     color:blue
 }

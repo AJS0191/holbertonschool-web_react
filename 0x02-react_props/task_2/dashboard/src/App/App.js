@@ -6,18 +6,8 @@ import Notifications from "../Notifications/Notifications"
 import Header from '../Header/header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
-import PropTypes from 'prop-types';
-import CourseList from '../CourseList/CourseList'
 
-
-
-function App(isLoggedin = true) {
-
-  if (isLoggedin == false){
-    let Body = Login;
-  } else {
-    let Body = CourseList;
-  }
+function App() {
   return (
     <React.Fragment>
     <Notifications />
@@ -26,7 +16,7 @@ function App(isLoggedin = true) {
         <Header/>
       </header>
       <body className="App-body">
-        
+        <Login/>
       </body>
       <footer className="App-footer">
         <Footer/>

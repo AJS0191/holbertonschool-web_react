@@ -10,7 +10,7 @@ class BodySection extends React.Component {
   return (
     <div className="bodySection">
       <h2>{this.props.title}</h2>
-      <p>{this.props.title}</p>
+      {this.props.children}
     </div>
   )
 };

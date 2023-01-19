@@ -9,6 +9,8 @@ import Footer from '../Footer/Footer';
 import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList'
 import Notifications from '../Notifications/Notifications'
+import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom'
+import BodySection from '../BodySection/BodySection';
 
 
 const listCourses = [
@@ -42,7 +44,10 @@ render() {
         <Header/>
       </header>
       <body className="App-body">
-      {this.props.isLoggedin ? <CourseList listCourses={listCourses}/> : <Login />}
+      {this.props.isLoggedin ? <BodySectionWithMarginBottom title='Course list'><CourseList listCourses={listCourses}/></BodySectionWithMarginBottom> : <BodySectionWithMarginBottom title='Log in to continue'><Login /></BodySectionWithMarginBottom>}
+      <BodySection title='News from the school'>
+        <p>Testing testing random strings here. They are coming for yOUUUU!</p>
+      </BodySection>
       </body>
       <footer className="App-footer">
         <Footer/>

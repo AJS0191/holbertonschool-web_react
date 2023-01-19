@@ -22,3 +22,5 @@ BodySection.propTypes = {
 BodySection.defaultProps = {
   title: 'test'
 }
+
+export default BodySection;

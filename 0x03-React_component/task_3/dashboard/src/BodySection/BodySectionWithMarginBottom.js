@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import BodySection from './BodySection/BodySection'
+import BodySection from './BodySection'
 import './BodySection.css'
 
 class BodySectionWithMarginBottom extends React.Component {
@@ -11,7 +11,7 @@ class BodySectionWithMarginBottom extends React.Component {
     return (
       
     <div className="bodySectionWithMargin">
-      <BodySection title={...this.props}></BodySection>
+      <BodySection {...this.props}></BodySection>
     </div>
 )
   }

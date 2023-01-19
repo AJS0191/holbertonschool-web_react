@@ -1,0 +1,21 @@
+#CourseList {
+    width:100%;
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+}
+
+#main-line  {
+    text-align: center;
+}
+
+th {
+    border-bottom-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+}

@@ -43,7 +43,7 @@ render() {
     App:{
       textAlign: 'center'
     },
-    footer:{
+    footer: {
       fontStyle: 'italic',
       color: 'black',
     },

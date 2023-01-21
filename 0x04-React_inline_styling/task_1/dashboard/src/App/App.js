@@ -43,11 +43,11 @@ render() {
     App:{
       textAlign: 'center'
     },
-    AppF:{
+    footer:{
       fontStyle: 'italic',
       color: 'black',
     },
-    AppB: {
+    body: {
       color: 'black',
       marginTop: 40,
       minHeight: 400,
@@ -69,13 +69,13 @@ render() {
       <header className={`${css(styles.AppH)}`}>
         <Header/>
       </header>
-      <body className={`${css(styles.AppB)}`}>
+      <body className={`${css(styles.body)}`}>
       {this.props.isLoggedin ? <BodySectionWithMarginBottom title='Course list'><CourseList listCourses={listCourses}/></BodySectionWithMarginBottom> : <BodySectionWithMarginBottom title='Log in to continue'><Login /></BodySectionWithMarginBottom>}
       <BodySection title='News from the school'>
         <p>Testing testing random strings here. They are coming for yOUUUU!</p>
       </BodySection>
       </body>
-      <footer className={`${css(styles.AppF)}`}>
+      <footer className={`${css(styles.footer)}`}>
         <Footer/>
       </footer>
     </div>

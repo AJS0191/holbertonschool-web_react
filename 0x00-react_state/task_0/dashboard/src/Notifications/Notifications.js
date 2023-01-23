@@ -14,7 +14,7 @@ class Notification extends React.Component {
     }
     
   }
-  
+
 
   handleDisplayDrawer() {
     this.setState({displayDrawer: true});

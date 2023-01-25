@@ -1,16 +1,10 @@
-import Immutable, {Map, is} from 'immutable';
-import accessImmutableObject from '2-nested'
+import Immutable, {Seq} from 'immutable';
+
 
 function printBestStudents(obj) {
-  for (student in obj) {
-    let score = accessImmutableObject(obj, 'score');
-    let first = accessImmutableObject(obj, 'firstName');
-    let last = accessImmutableObject(obj, 'lastName');
-
-    if (score > 70) {
-      console.log(`${first[0].toUpperCase() + first.substring(1)} ${last[0].toUpperCase() + last.substring(1)}`)
-    }
-  }
+  Seq(obj)
+  .filter(x => x.score > 70)
+  .map(x => console.log(`${x.firstName[0] + x.firstName.substring(1)} ${x.lastName[0] + x.lastName.substring(1)}`))
 }
 
 export default printBestStudents;

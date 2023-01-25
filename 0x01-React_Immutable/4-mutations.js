@@ -1,6 +1,6 @@
-import { Map } from 'immutable';
+import Immutable from 'immutable';
 
-const map = Map(
+const map = Immutable.Map(
   {
     1: 'Liam',
     2: 'Noah',
@@ -8,7 +8,7 @@ const map = Map(
     4: 'Oliver',
     5: 'Jacob',
     6: 'Lucas',
-  },
+  }
 );
 
 const map2 = map.withMutations(() => {

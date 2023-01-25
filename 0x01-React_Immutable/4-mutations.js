@@ -8,7 +8,7 @@ const map = Immutable.Map(
     4: 'Oliver',
     5: 'Jacob',
     6: 'Lucas',
-  }
+  },
 );
 
 const map2 = map.withMutations(() => {

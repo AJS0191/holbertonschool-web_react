@@ -1,3 +1,3 @@
 import {fromJS} from 'immutable';
 
-const  getImmutableObject = (object) => frinJS(object);
+const  getImmutableObject = (object) => {return fromJS(object)};

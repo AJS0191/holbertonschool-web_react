@@ -76,16 +76,21 @@ class Notification extends React.Component {
       Here is the list of notifications
       </p>
       <ul>
-        {this.props.listNotification.length === 0 && (
+        {this.props.listNotifications.length === 0 && (
           <li>No new notification for now</li>
         )}
         {
-            this.props.listNotification.map(notification => (
+            this.props.listNotifications.map(notification => (
               <NotificationItem 
                           key={notification.id}
                           type={notification.type}
                           value={notification.value}
-                          html={notification.html} />
+                          html={notification.html}
+                          id ={notification.id}
+
+                          logOut = {this.props.logOut}
+                          listNotifications = {this.props.listNotifications}
+                          markNotificationAsRead = {this.props.markNotificationAsRead}/>
             ))
           }
       </ul>
@@ -109,19 +114,17 @@ function closeButton() {
   handleHideDrawer()
 }
 
-function markAsRead(id) {
-  console.log(`Notification ${id} has been marked as read`)
-}
+
 Notification.propTypes = {
-  listNotification: propTypes.array,
-  markAsRead: propTypes.func,
+  listNotifications: propTypes.array,
+  markNotificationAsRead: propTypes.func,
   displayDrawer: propTypes.bool,
 }
 
 Notification.defaultProps = {
-  listNotification: [],
-  markAsRead: () => {},
+  listNotifications: [],
+  markNotificationAsRead: () => {},
   displayDrawer: false,
 }
 
-export {Notification,  markAsRead};
+export {Notification};

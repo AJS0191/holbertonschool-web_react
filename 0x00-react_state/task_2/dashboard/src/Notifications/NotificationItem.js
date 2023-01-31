@@ -1,5 +1,5 @@
 import React from 'react';
-import { markAsRead } from './Notifications';
+import { App } from '../App/App';
 import propTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 
@@ -7,7 +7,9 @@ class NotificationItem extends React.PureComponent {
   constructor(props) {
     super(props);
     }
+    
   render(){
+    console.log(this.props)
     const styles = StyleSheet.create({
       notifU: {
         color: 'red',
@@ -35,11 +37,11 @@ class NotificationItem extends React.PureComponent {
       },
     })
   if (this.props.value) {
-    if (this.props.type == 'urgent') return(<li  className={`${css(styles.notifU)}`} data-notification-type={this.props.type} onClick={() => {markAsRead(0)}}>{this.props.value}</li>)
+    if (this.props.type == 'urgent') return(<li  className={`${css(styles.notifU)}`} data-notification-type={this.props.type} onClick={() => {this.props.markNotificationsAsRead(this.props.id)}}>{this.props.value}</li>)
     else
-      return(<li  className={`${css(styles.notifN)}`}  data-notification-type={this.props.type} onClick={() => {markAsRead(0)}}>{this.props.value}</li>)}
-  if (this.props.html) return(<li className={`${css(styles.notifU)}`} data-notification-type={this.props.type} dangerouslySetInnerHTML={this.props.html} onClick={() => {markAsRead(1)}}></li>)
-  return (<li className={`${css(styles.notifN)}`} data-notification-type={this.props.type} onClick={() => {markAsRead(2)}}></li>)
+      return(<li  className={`${css(styles.notifN)}`}  data-notification-type={this.props.type} onClick={() => {this.props.markNotificationsAsRead(this.props.id)}}>{this.props.value}</li>)}
+  if (this.props.html) return(<li className={`${css(styles.notifU)}`} data-notification-type={this.props.type} dangerouslySetInnerHTML={this.props.html} onClick={() => {this.props.markNotificationsAsRead(this.props.id)}}></li>)
+  return (<li className={`${css(styles.notifN)}`} data-notification-type={this.props.type} onClick={() => {this.props.markNotificationsAsRead(this.props.id)}}></li>)
 };
 }
 
@@ -47,12 +49,18 @@ NotificationItem.propTypes = {
   type: propTypes.string,
   value: propTypes.string,
   html: propTypes.shape({__html: propTypes.string,}),
+  id: propTypes.number,
+  markNotificationAsRead: propTypes.func,
+  listNotifications: propTypes.array
 }
 
 NotificationItem.defaultProps = {
   type: '',
   value: '',
   html: {},
+  id: 0,
+  markNotificationAsRead: () => {},
+  listNotifications: []
 }
 
 export default NotificationItem;

@@ -13,6 +13,7 @@ import BodySection from '../BodySection/BodySection';
 import {StyleSheet, css} from 'aphrodite';
 import userContext from './AppContext';
 import {user} from './AppContext'
+import { Notification } from '../Notifications/Notifications';
 
 
 const listCourses = [
@@ -21,11 +22,6 @@ const listCourses = [
   {id:3, name:'React', credit: 40},
 ];
 
-const listNotification = [
-  {id: 1, type: 'default', value: 'New course Available'},
-  {id: 2, type: 'urgent', value: 'New resume available'},
-	{id: 3, type: 'urgent', html: {__html: getLatestNotification()}},
-]
 
 class App extends React.Component {
   componentDidMount() {
@@ -39,7 +35,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       user: user,
-      logOut: this.logOut
+      logOut: this.logOut,
+      listNotifications: [
+        {id: 1, type: 'default', value: 'New course Available'},
+        {id: 2, type: 'urgent', value: 'New resume available'},
+        {id: 3, type: 'urgent', html: {__html: getLatestNotification()}},
+      ]
     }
     this.logIn = this.logIn.bind(this);
     this.logOut = this.logOut.bind(this);
@@ -58,7 +59,7 @@ class App extends React.Component {
     }))
   }
 
-  logOut() {
+  logOut = () => { 
     this.setState({ user: {
       email: '',
       password: '',
@@ -71,6 +72,14 @@ class App extends React.Component {
       return true
     }
     return false
+  }
+
+  markNotificationAsRead(id) {
+    const list = this.state.listNotifications
+    this.setState({
+      listNotifications: list.filter((notif) => {
+      return notif.id !== id
+      })});
   }
 
 render() {
@@ -104,6 +113,7 @@ render() {
       user: this.state.user,
       logOut: this.state.logOut
     }}>
+    <Notification listNotifications={this.state.listNotifications} markNotificationAsRead={this.markNotificationAsRead} logOut={this.logOut}/>
     <div className={`${css(styles.App)}`}>
       <header className={`${css(styles.AppH)}`}>
         <Header/>
@@ -130,4 +140,4 @@ App.defaultProps = {
 
 
 
-export {App, listNotification, };
+export {App};

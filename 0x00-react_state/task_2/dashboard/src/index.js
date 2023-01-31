@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {App, listNotification} from './App/App';
+import {App} from './App/App';
 import {Notification} from './Notifications/Notifications';
 import reportWebVitals from './reportWebVitals';
 import { markAsRead } from './Notifications/Notifications';
@@ -9,7 +9,6 @@ import { markAsRead } from './Notifications/Notifications';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Notification listNotification={listNotification}/>
     <App />
   </React.StrictMode>
 );

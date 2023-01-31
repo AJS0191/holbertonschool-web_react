@@ -44,6 +44,7 @@ class App extends React.Component {
     }
     this.logIn = this.logIn.bind(this);
     this.logOut = this.logOut.bind(this);
+    this.markNotificationAsRead = this.markNotificationAsRead.bind(this)
   }
 
   logIn(email, password){
@@ -74,7 +75,7 @@ class App extends React.Component {
     return false
   }
 
-  markNotificationAsRead(id) {
+  markNotificationAsRead = (id) => {
     const list = this.state.listNotifications
     this.setState({
       listNotifications: list.filter((notif) => {

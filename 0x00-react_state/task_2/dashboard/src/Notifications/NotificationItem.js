@@ -37,11 +37,11 @@ class NotificationItem extends React.PureComponent {
       },
     })
   if (this.props.value) {
-    if (this.props.type == 'urgent') return(<li  className={`${css(styles.notifU)}`} data-notification-type={this.props.type} onClick={() => {this.props.markNotificationsAsRead(this.props.id)}}>{this.props.value}</li>)
+    if (this.props.type == 'urgent') return(<li  className={`${css(styles.notifU)}`} data-notification-type={this.props.type} onClick={() => {this.props.markNotificationAsRead(this.props.id)}}>{this.props.value}</li>)
     else
-      return(<li  className={`${css(styles.notifN)}`}  data-notification-type={this.props.type} onClick={() => {this.props.markNotificationsAsRead(this.props.id)}}>{this.props.value}</li>)}
-  if (this.props.html) return(<li className={`${css(styles.notifU)}`} data-notification-type={this.props.type} dangerouslySetInnerHTML={this.props.html} onClick={() => {this.props.markNotificationsAsRead(this.props.id)}}></li>)
-  return (<li className={`${css(styles.notifN)}`} data-notification-type={this.props.type} onClick={() => {this.props.markNotificationsAsRead(this.props.id)}}></li>)
+      return(<li  className={`${css(styles.notifN)}`}  data-notification-type={this.props.type} onClick={() => {this.props.markNotificationAsRead(this.props.id)}}>{this.props.value}</li>)}
+  if (this.props.html) return(<li className={`${css(styles.notifU)}`} data-notification-type={this.props.type} dangerouslySetInnerHTML={this.props.html} onClick={() => {this.props.markNotificationAsRead(this.props.id)}}></li>)
+  return (<li className={`${css(styles.notifN)}`} data-notification-type={this.props.type} onClick={() => {this.props.markNotificationAsRead(this.props.id)}}></li>)
 };
 }
 

@@ -23,3 +23,5 @@ const notification = new schema.Entity('notifications', {
 const normalizedData = normalize(notifList, [notification])
 
 module.exports = [normalizedData, getAllNotificationsByUser]
+
+console.log(normalizedData)

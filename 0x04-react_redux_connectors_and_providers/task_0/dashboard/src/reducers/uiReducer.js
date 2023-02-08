@@ -41,3 +41,5 @@ function uiReducer(action) {
       return state
   }
 }
+
+module.exports = {uiReducer}
